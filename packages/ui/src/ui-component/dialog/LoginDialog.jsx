@@ -23,39 +23,54 @@ const LoginDialog = ({ show, dialogProps, onConfirm }) => {
     const [passwordVal, setPasswordVal] = useState('')
 
     const component = show ? (
-        <Dialog
-            onKeyUp={(e) => {
-                if (e.key === 'Enter') {
-                    onConfirm(usernameVal, passwordVal)
-                }
-            }}
-            open={show}
-            fullWidth
-            maxWidth='xs'
-            aria-labelledby='alert-dialog-title'
-            aria-describedby='alert-dialog-description'
-        >
-            <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                {dialogProps.title}
-            </DialogTitle>
-            <DialogContent>
-                <Typography>Username</Typography>
-                <Input
-                    inputParam={usernameInput}
-                    onChange={(newValue) => setUsernameVal(newValue)}
-                    value={usernameVal}
-                    showDialog={false}
-                />
-                <div style={{ marginTop: 20 }}></div>
-                <Typography>Password</Typography>
-                <Input inputParam={passwordInput} onChange={(newValue) => setPasswordVal(newValue)} value={passwordVal} />
-            </DialogContent>
-            <DialogActions>
-                <StyledButton variant='contained' onClick={() => onConfirm(usernameVal, passwordVal)}>
-                    {dialogProps.confirmButtonName}
-                </StyledButton>
-            </DialogActions>
-        </Dialog>
+        <>
+            {/* Fullscreen Overlay */}
+            <div
+                style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
+                    zIndex: 999 // Ensure it appears behind the Dialog
+                }}
+            />
+            <Dialog
+                onKeyUp={(e) => {
+                    if (e.key === 'Enter') {
+                        onConfirm(usernameVal, passwordVal)
+                    }
+                }}
+                open={show}
+                fullWidth
+                maxWidth='xs'
+                aria-labelledby='alert-dialog-title'
+                aria-describedby='alert-dialog-description'
+                style={{ zIndex: 1000 }} // Ensure it appears above the overlay
+            >
+                <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
+                    {dialogProps.title}
+                </DialogTitle>
+                <DialogContent>
+                    <Typography>Username</Typography>
+                    <Input
+                        inputParam={usernameInput}
+                        onChange={(newValue) => setUsernameVal(newValue)}
+                        value={usernameVal}
+                        showDialog={false}
+                    />
+                    <div style={{ marginTop: 20 }}></div>
+                    <Typography>Password</Typography>
+                    <Input inputParam={passwordInput} onChange={(newValue) => setPasswordVal(newValue)} value={passwordVal} />
+                </DialogContent>
+                <DialogActions>
+                    <StyledButton variant='contained' onClick={() => onConfirm(usernameVal, passwordVal)}>
+                        {dialogProps.confirmButtonName}
+                    </StyledButton>
+                </DialogActions>
+            </Dialog>
+        </>
     ) : null
 
     return createPortal(component, portalElement)

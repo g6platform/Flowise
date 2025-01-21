@@ -1,5 +1,9 @@
-import logo from '@/assets/images/flowise_logo.png'
-import logoDark from '@/assets/images/flowise_logo_dark.png'
+import logo from '@/assets/images/g6platform_horizontal_in_white_or_transparent.png'
+import logoDark from '@/assets/images/g6platform_horizontal_in_black.png'
+
+// cleanup
+// import logo from '@/assets/images/flowise_logo.png'
+// import logoDark from '@/assets/images/flowise_logo_dark.png'
 
 import { useSelector } from 'react-redux'
 
@@ -13,7 +17,7 @@ const Logo = () => {
             <img
                 style={{ objectFit: 'contain', height: 'auto', width: 150 }}
                 src={customization.isDarkMode ? logoDark : logo}
-                alt='Flowise'
+                alt='G6 ATC'
             />
         </div>
     )

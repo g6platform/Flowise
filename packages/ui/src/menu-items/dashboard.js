@@ -35,25 +35,27 @@ const dashboard = {
             type: 'item',
             url: '/agentflows',
             icon: icons.IconUsersGroup,
-            breadcrumbs: true,
-            isBeta: true
-        },
-        {
-            id: 'assistants',
-            title: 'Assistants',
-            type: 'item',
-            url: '/assistants',
-            icon: icons.IconRobot,
             breadcrumbs: true
+            // isBeta: true
         },
-        {
-            id: 'marketplaces',
-            title: 'Marketplaces',
-            type: 'item',
-            url: '/marketplaces',
-            icon: icons.IconBuildingStore,
-            breadcrumbs: true
-        },
+        //../assistants
+        // {
+        //     id: 'assistants',
+        //     title: 'Assistants',
+        //     type: 'item',
+        //     url: '/assistants',
+        //     icon: icons.IconRobot,
+        //     breadcrumbs: true
+        // },
+        //../marketplaces
+        // {
+        //     id: 'marketplaces',
+        //     title: 'Marketplaces',
+        //     type: 'item',
+        //     url: '/marketplaces',
+        //     icon: icons.IconBuildingStore,
+        //     breadcrumbs: true
+        // },
         {
             id: 'tools',
             title: 'Tools',

@@ -23,7 +23,7 @@ class StripeTool_Tools implements INode {
         this.icon = 'stripe.png'
         this.category = 'Tools'
         this.description = 'Use Stripe Agent function calling for financial transactions'
-        this.badge = 'BETA'
+        this.badge = 'NEW'
         this.inputs = [
             {
                 label: 'Payment Links',

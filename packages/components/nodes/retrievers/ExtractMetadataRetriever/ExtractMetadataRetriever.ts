@@ -31,7 +31,7 @@ class ExtractMetadataRetriever_Retrievers implements INode {
         this.category = 'Retrievers'
         this.description = 'Extract keywords/metadata from the query and use it to filter documents'
         this.baseClasses = [this.type, 'BaseRetriever']
-        this.badge = 'BETA'
+        this.badge = 'NEW'
         this.inputs = [
             {
                 label: 'Vector Store',
