@@ -121,7 +121,7 @@ export const defaultThemeConfig = {
     chatWindow: {
         showTitle: true,
         showAgentMessages: true,
-        title: 'Flowise Bot',
+        title: 'G6-ATC Bot',
         titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
         welcomeMessage: 'Hello! This is custom welcome message',
         errorMessage: 'This is a custom error message',
@@ -170,8 +170,8 @@ export const defaultThemeConfig = {
         footer: {
             textColor: '#303235',
             text: 'Powered by',
-            company: 'Flowise',
-            companyLink: 'https://flowiseai.com'
+            company: 'G6-ATC',
+            companyLink: 'https://g6platform.com/'
         }
     }
 }
